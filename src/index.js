@@ -1,18 +1,20 @@
-// Test import of a JavaScript function
-import {example} from './js/example'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
-// Test import of an asset
-import webpackLogo from './images/webpack-logo.svg'
+import { Loader } from './components';
 
-// Test import of styles
-import './styles/index.scss'
+import { persistor, store } from './redux/store';
+import App from './App';
 
-// Appending to the DOM
-const logo = document.createElement('img')
-logo.src = webpackLogo
+import './assets/sass/main.scss';
 
-const heading = document.createElement('h1')
-heading.textContent = example()
-
-const app = document.querySelector('#root')
-app.append(logo, heading)
+ReactDOM.render(
+  <Provider store={store}>
+    <PersistGate loading={<Loader />} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
+  document.getElementById('root'),
+);
