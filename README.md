@@ -75,7 +75,7 @@ cd dist && http-server
 
 ## Author
 
-- a combination of a WebPack 5 boilerplate from [Tania Rascia](https://www.taniarascia.com) and the src from from [https://github.com/eldrego/react-redux-starter-kit.git]
+- a combination of a WebPack 5 boilerplate from [Tania Rascia](https://www.taniarascia.com) and the src from [https://github.com/eldrego/react-redux-starter-kit.git]
 
 ## License
 
